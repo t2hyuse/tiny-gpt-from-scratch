@@ -125,10 +125,7 @@ import numpy as np
 
 def make_2d_random(rows, cols, seed):
     """Return a (rows, cols) array of uniform floats in [0, 1) seeded by `seed`."""
-    # 1. Initialize the modern, isolated Random Number Generator (RNG)
     rng = np.random.default_rng(seed)
-    
-    # 2. Draw the entire 2D uniform sample directly in one step
     return rng.random((rows, cols))
 
 # Step 13 - index_element (not yet solved)

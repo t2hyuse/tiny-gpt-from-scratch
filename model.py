@@ -102,8 +102,14 @@ def get_array_shape(arr):
     return arr.shape
     pass
 
-# Step 10 - get_array_dtype (not yet solved)
-# TODO: implement
+# Step 10 - get_array_dtype
+import numpy as np
+
+def get_array_dtype(arr):
+    """Return the dtype of a NumPy array."""
+    # TODO: return the dtype attribute of arr
+    return arr.dtype
+    pass
 
 # Step 11 - make_2d_zeros (not yet solved)
 # TODO: implement

@@ -135,8 +135,14 @@ def index_element(arr, i, j):
     return arr[i, j]
     pass
 
-# Step 14 - slice_row (not yet solved)
-# TODO: implement
+# Step 14 - slice_row
+import numpy as np
+
+def slice_row(arr, i):
+    """Return row i of a 2D array as a 1D view."""
+    # TODO: return the i-th row of arr as a 1D array of shape (C,)
+    return arr[i, :]
+    pass
 
 # Step 15 - slice_column (not yet solved)
 # TODO: implement

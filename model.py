@@ -14,7 +14,7 @@ def build_vocab(text):
     for char in text:
         if char in arr:
             continue
-        arr.insert(1, char)
+        arr.append(char)
     
     arr.sort()
     return arr

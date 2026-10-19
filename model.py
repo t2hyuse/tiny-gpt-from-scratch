@@ -174,8 +174,16 @@ def elementwise_add(a, b):
     return a 
     pass
 
-# Step 18 - elementwise_multiply (not yet solved)
-# TODO: implement
+# Step 18 - elementwise_multiply
+import numpy as np
+
+def elementwise_multiply(a, b):
+    """Return the elementwise product of two same-shape arrays."""
+    # TODO: compute the elementwise (Hadamard) product of a and b
+    for i in range(len(a)):
+        a[i] = a[i] * b[i]
+    return a 
+    pass
 
 # Step 19 - scalar_broadcast_add (not yet solved)
 # TODO: implement

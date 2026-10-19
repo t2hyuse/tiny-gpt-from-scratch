@@ -85,8 +85,13 @@ def decode_ids(ids, itos):
 
     pass
 
-# Step 8 - make_1d_array (not yet solved)
-# TODO: implement
+# Step 8 - make_1d_array
+import numpy as np
+
+def make_1d_array(values):
+    """Create a 1D NumPy array from a Python list of numbers."""
+    # NumPy automatically infers the correct type (int or float) based on the inputs
+    return np.array(values)
 
 # Step 9 - get_array_shape (not yet solved)
 # TODO: implement

@@ -32,8 +32,19 @@ def build_stoi(vocab):
     return dictionnary
     pass
 
-# Step 3 - build_itos (not yet solved)
-# TODO: implement
+# Step 3 - build_itos
+def build_itos(vocab):
+    """Return a dict mapping each index 0..len(vocab)-1 to its character."""
+    # TODO: build an int-to-string lookup from the vocab list
+
+    index = 0
+    dictionnary = dict()
+
+    for char in vocab:
+        dictionnary[index] = char
+        index += 1
+    return dictionnary 
+    pass
 
 # Step 4 - encode_char (not yet solved)
 # TODO: implement

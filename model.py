@@ -168,7 +168,6 @@ import numpy as np
 def elementwise_add(a, b):
     """Return the elementwise sum of two same-shape arrays."""
     # TODO: return a new array whose entries are the pairwise sums of a and b
-    length = len(a)
     for i in range(len(a)):
         a[i] = a[i] + b[i]
     return a 

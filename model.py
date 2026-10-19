@@ -20,8 +20,17 @@ def build_vocab(text):
     return arr
     pass
 
-# Step 2 - build_stoi (not yet solved)
-# TODO: implement
+# Step 2 - build_stoi
+def build_stoi(vocab):
+    """Return a dict mapping each character in vocab to its index."""
+    # TODO: map each character in vocab to its integer position
+    dictionnary = dict()
+    index = 0 
+    for char in vocab:
+        dictionnary[char] = index
+        index += 1
+    return dictionnary
+    pass
 
 # Step 3 - build_itos (not yet solved)
 # TODO: implement

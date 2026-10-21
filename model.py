@@ -373,7 +373,10 @@ def read_text_file(text_blob):
     """Return text_blob unchanged after validating it is a non-empty string."""
     # TODO: validate that text_blob is a non-empty str and return it as the corpus string
     if not isinstance(text_blob,str):
-        return "Type error"
+        raise TypeError
+    if not text_blob:
+        raise ValueError
+        
     return text_blob
     pass
 

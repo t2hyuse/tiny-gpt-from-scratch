@@ -67,7 +67,7 @@ python scaffold.py
 - [ ] **55.** sum_negative_log_probs
 - [ ] **56.** average_nll
 - [x] **57.** initialize_w_random
-- [ ] **58.** scale_w_small
+- [x] **58.** scale_w_small
 - [ ] **59.** one_hot_encode_batch
 - [ ] **60.** forward_logits_onehot
 - [ ] **61.** observe_lookup_equivalence

@@ -437,8 +437,14 @@ def initialize_w_random(vocab_size, rng):
     return rng.normal(0, 1, (vocab_size, vocab_size))
     pass
 
-# Step 58 - scale_w_small (not yet solved)
-# TODO: implement
+# Step 58 - scale_w_small
+import numpy as np
+
+def scale_w_small(w_matrix, scale):
+    """Return w_matrix scaled by the given small factor."""
+    # TODO: return a new array equal to w_matrix multiplied by scale
+    return scale * w_matrix
+    pass
 
 # Step 59 - one_hot_encode_batch (not yet solved)
 # TODO: implement

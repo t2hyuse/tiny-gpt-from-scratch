@@ -565,8 +565,12 @@ def forward_logits_onehot(onehot, w_matrix):
 # Step 73 - sample_from_neural_bigram (not yet solved)
 # TODO: implement
 
-# Step 74 - linear_forward (not yet solved)
-# TODO: implement
+# Step 74 - linear_forward
+def linear_forward(x, w):
+    # TODO: compute Y = X @ W and return {'y': Y, 'cache': {'x': x, 'w': w}}.
+    Y = x @ w
+    return {'y': Y, 'cache': {'x': x, 'w': w}}
+    pass
 
 # Step 75 - derive_dx_on_paper (not yet solved)
 # TODO: implement

@@ -513,7 +513,7 @@ def one_hot_encode_batch(ids, vocab_size):
     N = len(ids)
     res = make_2d_zeros(N, vocab_size)
 
-    for i in ids:
+    for i in range(ids.shape[0]):
         res[i, ids[i]] = 1
     
     return res

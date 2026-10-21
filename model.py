@@ -242,8 +242,18 @@ def sum_all(arr):
     return np.sum(arr)
     pass
 
-# Step 24 - sum_axis0 (not yet solved)
-# TODO: implement
+# Step 24 - sum_axis0
+import numpy as np
+
+def sum_axis0(arr):
+    """Sum a 2D array along axis 0, collapsing rows into a 1D vector of column sums."""
+    # TODO: reduce the row dimension of arr so the result has shape (C,).
+    shap = arr.shape
+    res = np.empty_like(arr[0, :])
+    for i in range(shap[1]):
+        res[i] = np.sum(arr[:, i])
+    return res
+    pass
 
 # Step 25 - sum_axis1 (not yet solved)
 # TODO: implement

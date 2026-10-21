@@ -35,8 +35,8 @@ python scaffold.py
 - [x] **23.** sum_all
 - [x] **24.** sum_axis0
 - [x] **25.** sum_axis1
-- [ ] **26.** max_along_axis
-- [ ] **27.** matmul
+- [x] **26.** max_along_axis
+- [x] **27.** matmul
 - [ ] **28.** transpose_matrix
 - [ ] **29.** sum_keepdims
 - [ ] **30.** naive_softmax_1d

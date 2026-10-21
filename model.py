@@ -279,19 +279,7 @@ import numpy as np
 def max_along_axis(arr, axis):
     """Return the maximum of arr along the given axis, with that axis removed."""
     # TODO: compute the maximum value of arr along the given axis
-    shap = arr.shape
-    if axis == 0:
-        res = np.empty_like(arr[0, :])
-        for i in range(shap[1]):
-            res[i] = np.max(arr[:, i])
-        return res
-    
-    if axis==1 :
-        res = np.empty_like(arr[:, 0])
-
-        for i in range(shap[0]):
-            res[i] = np.max(arr[i, :])
-        return res
+    return np.max(arr, axis)
     pass
 
 # Step 27 - matmul
@@ -446,8 +434,21 @@ def scale_w_small(w_matrix, scale):
     return scale * w_matrix
     pass
 
-# Step 59 - one_hot_encode_batch (not yet solved)
-# TODO: implement
+# Step 59 - one_hot_encode_batch
+import numpy as np
+
+def one_hot_encode_batch(ids, vocab_size):
+    """Convert a 1D array of token ids into a (N, vocab_size) one-hot matrix."""
+    # TODO: allocate an (N, vocab_size) zero matrix and set one 1 per row at ids[i]
+    N = len(ids)
+    res = make_2d_zeros(N, vocab_size)
+
+    for i in ids:
+        res[i, ids[i]] = 1
+    
+    return res
+
+    pass
 
 # Step 60 - forward_logits_onehot (not yet solved)
 # TODO: implement

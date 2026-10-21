@@ -353,8 +353,14 @@ def softmax_overflow_demo(large_value):
 # Step 33 - stable_softmax_2d_rowwise (not yet solved)
 # TODO: implement
 
-# Step 34 - read_text_file (not yet solved)
-# TODO: implement
+# Step 34 - read_text_file
+def read_text_file(text_blob):
+    """Return text_blob unchanged after validating it is a non-empty string."""
+    # TODO: validate that text_blob is a non-empty str and return it as the corpus string
+    if not isinstance(text_blob,str):
+        return "Type error"
+    return text_blob
+    pass
 
 # Step 35 - encode_corpus_to_int_array (not yet solved)
 # TODO: implement
@@ -422,8 +428,14 @@ def softmax_overflow_demo(large_value):
 # Step 56 - average_nll (not yet solved)
 # TODO: implement
 
-# Step 57 - initialize_w_random (not yet solved)
-# TODO: implement
+# Step 57 - initialize_w_random
+import numpy as np
+
+def initialize_w_random(vocab_size, rng):
+    """Return a (vocab_size, vocab_size) float64 matrix of N(0,1) samples drawn from rng."""
+    # TODO: sample a (vocab_size, vocab_size) array of standard normal values using rng
+    return rng.normal(0, 1, (vocab_size, vocab_size))
+    pass
 
 # Step 58 - scale_w_small (not yet solved)
 # TODO: implement

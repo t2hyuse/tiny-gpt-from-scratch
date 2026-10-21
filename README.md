@@ -43,7 +43,7 @@ python scaffold.py
 - [x] **31.** softmax_overflow_demo
 - [ ] **32.** stable_softmax_1d
 - [ ] **33.** stable_softmax_2d_rowwise
-- [ ] **34.** read_text_file
+- [x] **34.** read_text_file
 - [ ] **35.** encode_corpus_to_int_array
 - [ ] **36.** pick_split_point
 - [ ] **37.** slice_train_and_val
@@ -66,7 +66,7 @@ python scaffold.py
 - [ ] **54.** log_prob_of_pair
 - [ ] **55.** sum_negative_log_probs
 - [ ] **56.** average_nll
-- [ ] **57.** initialize_w_random
+- [x] **57.** initialize_w_random
 - [ ] **58.** scale_w_small
 - [ ] **59.** one_hot_encode_batch
 - [ ] **60.** forward_logits_onehot

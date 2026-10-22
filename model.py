@@ -536,8 +536,17 @@ def normalize_counts_to_probs(n_matrix):
     return n_matrix / summ
     pass
 
-# Step 51 - sample_next_token (not yet solved)
-# TODO: implement
+# Step 51 - sample_next_token
+import numpy as np
+
+def sample_next_token(p_matrix, current_id, rng):
+    """Sample the next token id from P[current_id] using rng."""
+    vocab_size = p_matrix.shape[1]
+    token_ids = np.arange(vocab_size)
+    probabilities = p_matrix[current_id, :]
+    
+    # Conversion explicite en type int standard de Python
+    return int(rng.choice(token_ids, p=probabilities))
 
 # Step 52 - generate_sequence (not yet solved)
 # TODO: implement

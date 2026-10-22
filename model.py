@@ -438,9 +438,14 @@ def slice_y_at_offset(data, i, block_size):
 # Step 41 - sample_random_batch_offsets
 def sample_random_batch_offsets(data_len, block_size, batch_size, rng):
     """Sample batch_size random valid starting offsets for (block_size+1)-windows."""
-    # TODO: sample batch_size offsets in the valid range for a (block_size+1)-window.
-    return rng.integers(0, data_len - block_size - 1, batch_size)
-    pass
+    max_start = data_len - block_size - 1  # last legal start (inclusive)
+    if max_start < 0:
+        raise ValueError(
+            f"data_len={data_len} is too short for block_size={block_size}; "
+            f"need at least block_size + 1 tokens."
+        )
+    # Generator.integers' high is exclusive, so add 1 to include max_start.
+    return rng.integers(0, max_start + 1, size=batch_size)
 
 # Step 42 - stack_x_batch
 import numpy as np
@@ -465,11 +470,11 @@ def stack_y_batch(data, offsets, block_size):
 
 # Step 44 - get_batch
 def get_batch(data, block_size, batch_size, rng):
-    # TODO: package one training batch (X, Y) of shape (batch_size, block_size) from data using rng.
-    offset = sample_random_batch_offsets(len(data), block_size, batch_size, rng)
-    return np.array([stack_x_batch(data, offset, block_size), 
-    stack_y_batch(data, offset, block_size)])
-    pass
+    """Return (X, Y), each of shape (batch_size, block_size); Y is X shifted by one."""
+    offsets = sample_random_batch_offsets(len(data), block_size, batch_size, rng)
+    X = stack_x_batch(data, offsets, block_size)
+    Y = stack_y_batch(data, offsets, block_size)
+    return X, Y
 
 # Step 45 - allocate_count_matrix
 import numpy as np

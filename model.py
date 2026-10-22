@@ -199,10 +199,7 @@ import numpy as np
 def vector_matrix_broadcast_add(matrix, vector):
     """Add a 1D vector to each row of a 2D matrix via broadcasting."""
     # TODO: return matrix + vector broadcast across rows
-    shap = matrix.shape
-    for i in range(shap[0]):
-        matrix[i, :] += vector
-    return matrix 
+    return matrix + vector
     pass
 
 # Step 21 - array_exp
@@ -606,8 +603,24 @@ def linear_backward_dw(dy, cache):
     return x.T @ dy
     pass
 
-# Step 79 - bias_add_forward (not yet solved)
-# TODO: implement
+# Step 79 - bias_add_forward
+def bias_add_forward(x, b):
+    """Add bias vector b (D,) to every row of x (B, D).
+
+    Returns {'y': ndarray (B, D), 'cache': {'b_shape': tuple}}.
+    """
+    # TODO: add b to each row of x and cache b's shape for the backward pass
+
+    new = vector_matrix_broadcast_add(x, b)
+
+    return {
+        'y' : new,
+        'cache' : {
+            'b_shape' : b.shape
+        }
+    }
+
+    pass
 
 # Step 80 - bias_add_backward_db (not yet solved)
 # TODO: implement

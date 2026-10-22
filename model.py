@@ -650,8 +650,17 @@ def relu_forward(x):
     # TODO: apply elementwise ReLU and cache the input for backward.
     pass
 
-# Step 82 - relu_backward (not yet solved)
-# TODO: implement
+# Step 82 - relu_backward
+def relu_backward(dy, cache):
+    """Backward pass for ReLU. cache['x'] holds the original input."""
+    # TODO: return dx with gradient zeroed where the cached input was non-positive.
+
+    x = cache['x']
+    x = (x > 0).astype(int)
+
+    return dy * x
+
+    pass
 
 # Step 83 - softmax_cross_entropy_backward (not yet solved)
 # TODO: implement

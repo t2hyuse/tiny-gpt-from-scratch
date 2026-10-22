@@ -635,8 +635,20 @@ def bias_add_backward_db(dy, cache):
     return summ
     pass
 
-# Step 81 - relu_forward (not yet solved)
-# TODO: implement
+# Step 81 - relu_forward
+def relu_forward(x):
+    """Apply elementwise ReLU and cache the input for backward.
+
+    Returns a dict with keys 'y' (activated array) and 'cache' (dict with 'x').
+    """
+    a = np.zeros_like(x)
+
+    return {
+        'y' : np.maximum(x, a),
+        'cache' : { 'x' : x}
+    }
+    # TODO: apply elementwise ReLU and cache the input for backward.
+    pass
 
 # Step 82 - relu_backward (not yet solved)
 # TODO: implement

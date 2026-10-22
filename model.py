@@ -588,8 +588,14 @@ def derive_linear_dw_on_paper():
     return 'dL/dW = X.T @ dY with shape (D_in, D_out) as we expect aijoaojajaojaoijaioajoajoajaa'
     pass
 
-# Step 77 - linear_backward_dx (not yet solved)
-# TODO: implement
+# Step 77 - linear_backward_dx
+def linear_backward_dx(dy, cache):
+    # TODO: compute the gradient of the loss w.r.t. the linear layer input X given dy and cache
+    w = cache['w']
+
+    return dy @ w.T
+
+    pass
 
 # Step 78 - linear_backward_dw (not yet solved)
 # TODO: implement
